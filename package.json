@@ -1,0 +1,39 @@
+{
+  "name": "ordery-mongodb",
+  "longName": "ordery-mongodb",
+  "description": "Convert Ordery Expressions to MongoDB sort documents.",
+  "version": "1.0.0",
+  "dependencies": {
+    "elv": "^2.0.0",
+    "ordery": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0"
+  },
+  "keywords": [
+    "order",
+    "by",
+    "expression",
+    "json",
+    "pointer",
+    "mongo",
+    "mongodb"
+  ],
+  "license": "MIT",
+  "main": "./lib",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsfields/ordery-mongodb-node"
+  },
+  "scripts": {
+    "build": "npm test && npm run lint",
+    "lint": "eslint ./*",
+    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text mocha --recursive ./test/unit"
+  }
+}
