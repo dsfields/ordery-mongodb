@@ -82,7 +82,7 @@ describe('#convert', function() {
         '/foo,/bar',
         new Strategy({
           deny: ['/bar'],
-        }),
+        })
       );
     }, errors.DeniedFieldError);
   });
@@ -93,7 +93,7 @@ describe('#convert', function() {
         '/foo,/bar',
         new Strategy({
           deny: ['/qux'],
-        }),
+        })
       );
     }, errors.DeniedFieldError);
   });
@@ -103,8 +103,8 @@ describe('#convert', function() {
       convert(
         '/foo,/bar:desc,/baz:asc',
         new Strategy({
-          allow: ['/foo','/bar'],
-        }),
+          allow: ['/foo', '/bar'],
+        })
       );
     }, errors.UnallowedFieldError);
   });
@@ -115,7 +115,7 @@ describe('#convert', function() {
         '/foo,/bar:desc,/baz:asc',
         new Strategy({
           allow: ['/foo', '/bar', '/baz'],
-        }),
+        })
       );
     }, errors.UnallowedFieldError);
   });
@@ -128,8 +128,8 @@ describe('#convert', function() {
           require: {
             fields: ['/qux', '/quux'],
             which: 'any',
-          }
-        }),
+          },
+        })
       );
     }, errors.RequiredFieldError);
   });
@@ -142,8 +142,8 @@ describe('#convert', function() {
           require: {
             fields: ['/foo', '/bar'],
             which: 'any',
-          }
-        }),
+          },
+        })
       );
     }, errors.RequiredFieldError);
   });
@@ -156,8 +156,8 @@ describe('#convert', function() {
           require: {
             fields: ['/foo', '/quux'],
             which: 'all',
-          }
-        }),
+          },
+        })
       );
     }, errors.RequiredFieldError);
   });
@@ -170,8 +170,8 @@ describe('#convert', function() {
           require: {
             fields: ['/foo', '/bar'],
             which: 'all',
-          }
-        }),
+          },
+        })
       );
     }, errors.RequiredFieldError);
   });
